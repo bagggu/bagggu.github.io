@@ -241,8 +241,9 @@ body {
   100% { background-position: right; }
 }
 
-.image {
+.image img {
   margin-right: 50px;
+  width: 75px;
 }
 
 .description {
