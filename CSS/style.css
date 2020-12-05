@@ -96,6 +96,7 @@ body {
 
 
 /* CONTACT */
+
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
 *{
@@ -166,8 +167,6 @@ body {
 
 /* CART */
 
-
-
 .shopping-cart {
   width: 750px;
   height: 423px;
@@ -175,7 +174,6 @@ body {
   background: #FFFFFF;
   box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
   border-radius: 6px;
-
   display: flex;
   flex-direction: column;
 }
@@ -191,7 +189,7 @@ body {
 
 .item {
   padding: 20px 30px;
-  height: 120px;
+  height: 140px;
   display: flex;
 }
 
@@ -201,54 +199,17 @@ body {
 }
 
 .buttons {
-  position: relative;
-  padding-top: 30px;
   margin-right: 60px;
-}
-.delete-btn,
-.like-btn {
-  display: inline-block;
-  Cursor: pointer;
-}
-.delete-btn {
-  width: 18px;
-  height: 17px;
-  background: url(&amp;quot;delete-icn.svg&amp;quot;) no-repeat center;
-}
-
-.like-btn {
-  position: absolute;
-  top: 9px;
-  left: 15px;
-  background: url('twitter-heart.png');
-  width: 60px;
-  height: 60px;
-  background-size: 2900%;
-  background-repeat: no-repeat;
-}
-
-.is-active {
-  animation-name: animate;
-  animation-duration: .8s;
-  animation-iteration-count: 1;
-  animation-timing-function: steps(28);
-  animation-fill-mode: forwards;
-}
-
-@keyframes animate {
-  0%   { background-position: left;  }
-  50%  { background-position: right; }
-  100% { background-position: right; }
 }
 
 .image img {
-  margin-right: 50px;
+  margin-right: 75px;
   width: 75px;
 }
 
 .description {
   padding-top: 10px;
-  margin-right: 60px;
+  margin-right: 75px;
   width: 115px;
 }
 
@@ -269,42 +230,21 @@ body {
 }
 
 .quantity {
-  padding-top: 20px;
-  margin-right: 60px;
+  margin-right: 100px;
+  margin-top: -6px;
 }
+
 .quantity input {
-  -webkit-appearance: none;
-  border: none;
   text-align: center;
-  width: 32px;
+  width: 50px;
   font-size: 16px;
   color: #43484D;
   font-weight: 300;
 }
 
-button[class*=btn] {
-  width: 30px;
-  height: 30px;
-  background-color: #E1E8EE;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
-.minus-btn img {
-  margin-bottom: 3px;
-}
-.plus-btn img {
-  margin-top: 2px;
-}
-
-button:focus,
-input:focus {
-  outline:0;
-}
-
 .total-price {
   width: 83px;
-  padding-top: 27px;
+  padding-top: 30px;
   text-align: center;
   font-size: 16px;
   color: #43484D;
@@ -321,18 +261,5 @@ input:focus {
     height: auto;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  .image img {
-    width: 50%;
-  }
-  .image,
-  .quantity,
-  .description {
-    width: 100%;
-    text-align: center;
-    margin: 6px 0;
-  }
-  .buttons {
-    margin-right: 20px;
   }
 }
