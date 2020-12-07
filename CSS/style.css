@@ -126,6 +126,15 @@ body {
   color: #332902;
 }
 
+.wrapper2 h1{
+  text-align: center;
+  margin-bottom: 18px;
+  margin-top: 300px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #332902;
+}
+
 .wrapper .input_field{
   margin-bottom: 10px;
 }
@@ -151,7 +160,7 @@ body {
   background: tan;
   color: #332902;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -168,19 +177,20 @@ body {
 /* CART */
 
 .shopping-cart {
-  width: 750px;
+  width: 700px;
   height: 423px;
   margin: 80px auto;
   background: #FFFFFF;
   box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
-  border-radius: 6px;
   display: flex;
   flex-direction: column;
+  border: solid;
+
 }
 
 .title {
   height: 60px;
-  border-bottom: 1px solid #E1E8EE;
+  border-bottom: 1px solid;
   padding: 20px 30px;
   color: #5E6977;
   font-size: 18px;
@@ -194,22 +204,23 @@ body {
 }
 
 .item:nth-child(3) {
-  border-top:  1px solid #E1E8EE;
-  border-bottom:  1px solid #E1E8EE;
+  border-top:  1px solid;
+  border-bottom:  1px solid;
 }
 
 .buttons {
-  margin-right: 60px;
+  margin-right: 20px;
 }
 
 .image img {
+  margin-top: -1px;
   margin-right: 75px;
   width: 75px;
 }
 
 .description {
   padding-top: 10px;
-  margin-right: 75px;
+  margin-right: 65px;
   width: 115px;
 }
 
@@ -230,8 +241,9 @@ body {
 }
 
 .quantity {
-  margin-right: 100px;
-  margin-top: -6px;
+  margin-right: 75px;
+  text-align: center;
+  font-size: 14px;
 }
 
 .quantity input {
@@ -241,6 +253,7 @@ body {
   color: #43484D;
   font-weight: 300;
 }
+
 
 .total-price {
   width: 83px;
@@ -257,9 +270,45 @@ body {
     height: auto;
     overflow: hidden;
   }
+
   .item {
     height: auto;
     flex-wrap: wrap;
     justify-content: center;
   }
 }
+
+#btn1, #Button {
+  background-color: #F5F5DB; solid;margin-top: 5px; border: solid; border-width: 3px; width: 212px; height:50px; float: right; cursor: pointer;
+}
+
+
+
+#mathBox2 div {
+  border: solid;
+  float: right;
+  border-width: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+
+}
+
+#mathBox1 {
+  width: 700px;
+  height: 423px;
+  margin: 80px auto;
+  margin-top: -73px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 800px) {
+  #mathBox1 {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
