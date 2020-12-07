@@ -46,8 +46,7 @@
 
           <div class="quantity">
             <p>Quantity</p>
-        <input type="text" id="topInput" value="0">
-            </button>
+        <input min="0" onchange="calculateSubTotal()" id="item1" type="number" value="0">
           </div>
 
           <div class="total-price">$15 each</div>
@@ -72,7 +71,7 @@
 
           <div class="quantity">
             <p>Quantity</p>
-            <input type="text" id="midInput" value="0">
+            <input min="0" onchange="calculateSubTotal()" id="item2" type="number" value="0">
           </div>
 
           <div class="total-price">$15 each</div>
@@ -97,49 +96,127 @@
 
           <div class="quantity">
             <p>Quantity</p>
-          <input type="text" id="lowInput" value="0">
-            </button>
+          <input min="0" onchange="calculateSubTotal()" id="item3" type="number" value="0">
           </div>
 
           <div class="total-price">$15 each</div>
         </div>
+</div>
+
+<div id="mathBox1">
+  <div id="mathBox2">
+
+        <div>
+          <p>Grand Total</p>
+        <p id="gTotal">$0.00</p>
+        </div>
+
+        <div>
+          <p>Shipping</p>
+        <p id="shipping">$0.00</p>
+        </div>
+
+        <div>
+          <p>Tax</p>
+        <p id="salesTax">$0.00</p>
+        </div>
+
+        <div>
+        <p>Sub Total</p>
+        <p id="subTotal">$0.00</p>
+        </div>
+
+
+</div>
+
+        <div class="click">
+        <button id="btn1" type="button" onclick="calculateSalesTax();calculateShipping();calculateGrandTotal();" name="button">Calculate Tax + Shipping</button>
+        </div>
+
+       <div class="showup">
+          <form action="thankyou.html">
+        <input id="Button" type="submit" value="SUBMIT">
+          </form>
+        </div>
+
+
       </div>
 
   </body>
   <script type="text/javascript">
-        $('.minus-btn').on('click', function(e) {
-      		e.preventDefault();
-      		var $this = $(this);
-      		var $input = $this.closest('div').find('input');
-      		var value = parseInt($input.val());
 
-      		if (value > 1) {
-      			value = value - 1;
-      		} else {
-      			value = 0;
-      		}
+  // Demo using plain javascript
+  var button = document.getElementById("Button");
+  var clickBtn = document.getElementsByClassName('click')[0];
 
-          $input.val(value);
+  // Disable the button on initial page load
+  button.disabled = true;
 
-      	});
+  //add event listener
+  clickBtn.addEventListener('click', function(event) {
+      button.disabled = !button.disabled;
+  });
 
-      	$('.plus-btn').on('click', function(e) {
-      		e.preventDefault();
-      		var $this = $(this);
-      		var $input = $this.closest('div').find('input');
-      		var value = parseInt($input.val());
+  button.addEventListener('click', function(event) {
+  });
 
-      		if (value < 100) {
-        		value = value + 1;
-      		} else {
-      			value =100;
-      		}
+  window.onload = function(){
 
-      		$input.val(value);
-      	});
+     document.getElementById("item1").value = "0";
+     document.getElementById("item2").value = "0";
+     document.getElementById("item3").value = "0";
 
-        $('.like-btn').on('click', function() {
-          $(this).toggleClass('is-active');
-        });
+ }
+
+        var subTotal = 0;
+
+        function calculateSubTotal()
+        {
+
+                var q1 = parseInt(document.getElementById("item1").value);
+                var q2 = parseInt(document.getElementById("item2").value);
+                var q3 = parseInt(document.getElementById("item3").value);
+                subTotal= q1*15 + q2*15 + q3*15;
+                document.getElementById("subTotal").innerHTML = "$"+subTotal+".00";
+
+        }
+
+        function  calculateSalesTax()
+        {
+            if (subTotal==0) {
+                window.alert("Please select an item first");
+            }
+            else
+            {
+            var tax_hold = (subTotal*1.06)-subTotal;
+            var taxes = tax_hold.toFixed(2);
+            document.getElementById("salesTax").innerHTML = "$"+taxes;
+            }
+        }
+        function calculateShipping()
+        {
+            if (subTotal==0) {
+                window.alert("Please select an item first");
+            }
+            else
+            {
+            var ship_Cost = (subTotal*1.02)-subTotal;
+            var shippingCost = ship_Cost.toFixed(2);
+            document.getElementById("shipping").innerHTML = "$"+shippingCost;
+            }
+        }
+        function calculateGrandTotal()
+        {
+            if (subTotal==0) {
+                window.alert("Please select an item first");
+            }
+            else
+            {
+            var grand_Total = (subTotal*1.02)+(subTotal*1.06)-subTotal;
+            var grandtotal = grand_Total.toFixed(2);
+            document.getElementById("gTotal").innerHTML = "$"+grandtotal;
+            }
+        }
+
       </script>
 </html>
